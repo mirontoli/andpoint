@@ -23,6 +23,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.VideoView;
 
@@ -55,7 +58,7 @@ public class MainActivity extends Activity implements MainActivityCoordinator,
         OnServicesDiscoveredListener {
 
 	private O365APIsStart_Application mApplication;
-	private MainButtonsFragment mButtonsFragment;
+	//private MainButtonsFragment mButtonsFragment;
 	private Menu mMenu;
     private ProgressDialog mDialogSignIn;
     private ProgressDialog mDialogDiscoverServices;
@@ -339,13 +342,46 @@ public class MainActivity extends Activity implements MainActivityCoordinator,
 
 		// When the app starts, the buttons should be disabled until the user
 		// signs in to Office 365
+        /*
 		FragmentManager fragmentManager = getFragmentManager();
 		mButtonsFragment = (MainButtonsFragment) fragmentManager
 				.findFragmentById(R.id.buttonsFragment);
 		mButtonsFragment.setButtonsEnabled(mApplication.userIsAuthenticated());
+		*/
+
+        setupHandlers();
 	}
 
-	@Override
+    private void setupHandlers() {
+
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(
+                this, R.array.classify_entries, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        Spinner sp = (Spinner)findViewById(R.id.spinnerClassify);
+        sp.setAdapter(adapter);
+
+
+        View.OnClickListener btnCreateClick = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(MainActivity.this, "Getting data...", Toast.LENGTH_LONG).show();
+
+                //TextView txt = (TextView)findViewById(R.id.textViewOutput);
+                //txt.setText("Hello\nBool");
+
+                Log.d("andpoint","Hej!");
+            }
+        };
+
+        Button btn = (Button)findViewById(R.id.buttonCreate);
+        btn.setOnClickListener(btnCreateClick);
+    }
+
+
+
+
+    @Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
@@ -410,7 +446,7 @@ public class MainActivity extends Activity implements MainActivityCoordinator,
 	}
 
 	protected void userSignedOut() {
-		mButtonsFragment.setButtonsEnabled(false);
+		//mButtonsFragment.setButtonsEnabled(false);
 
 		MenuItem signInMenuItem = mMenu.findItem(R.id.menu_signin);
 		signInMenuItem.setIcon(R.drawable.user_signedout);
@@ -516,7 +552,7 @@ public class MainActivity extends Activity implements MainActivityCoordinator,
                         @Override
                         public void run() {
                             // User was signed in so activate the buttons.
-                            mButtonsFragment.setButtonsEnabled(true);
+                            //mButtonsFragment.setButtonsEnabled(true);
                             signInMenuItem.setIcon(R.drawable.user_default_signedin);
                             signInMenuItem.setTitle(displayName);
 
