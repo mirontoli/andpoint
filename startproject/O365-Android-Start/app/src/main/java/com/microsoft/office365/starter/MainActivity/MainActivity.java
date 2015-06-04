@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -355,9 +356,6 @@ public class MainActivity extends Activity implements MainActivityCoordinator,
 
     private void setupApp() {
 
-        // date
-
-
         // spinner
         ArrayAdapter adapter = ArrayAdapter.createFromResource(
                 this, R.array.classify_entries, android.R.layout.simple_spinner_item);
@@ -372,7 +370,18 @@ public class MainActivity extends Activity implements MainActivityCoordinator,
     private void setupHandlers() {
 
 
-        View.OnClickListener btnCreateClick = new View.OnClickListener() {
+        View.OnClickListener imgCameraClickHandler = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("andpoint","Img click!");
+            }
+        };
+
+        ImageView img = (ImageView)findViewById(R.id.imageViewCamera);
+        img.setOnClickListener(imgCameraClickHandler);
+
+
+        View.OnClickListener btnCreateClickHandler = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(MainActivity.this, "Getting data...", Toast.LENGTH_LONG).show();
@@ -380,12 +389,12 @@ public class MainActivity extends Activity implements MainActivityCoordinator,
                 //TextView txt = (TextView)findViewById(R.id.textViewOutput);
                 //txt.setText("Hello\nBool");
 
-                Log.d("andpoint","Hej!");
+                Log.d("andpoint","Create button!");
             }
         };
 
         Button btn = (Button)findViewById(R.id.buttonCreate);
-        btn.setOnClickListener(btnCreateClick);
+        btn.setOnClickListener(btnCreateClickHandler);
     }
 
 
