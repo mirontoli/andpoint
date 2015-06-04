@@ -311,6 +311,12 @@ REST API in Office 365 APIs&lt;/a%gt;&lt;/b>.&lt;/p>
 
 
     <string name="classify_prompt">Välj kategori</string>
+    <string-array name="classify_entries">
+        <item>Information</item>
+        <item>Varning</item>
+        <item>Kritiskt</item>
+    </string-array>
+
 
 
 </resources>

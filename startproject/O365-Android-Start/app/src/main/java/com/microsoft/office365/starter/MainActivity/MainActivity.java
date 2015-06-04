@@ -15,7 +15,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.common.util.concurrent.FutureCallback;
@@ -68,6 +70,15 @@ public class MainActivity extends Activity implements MainActivityCoordinator,
 	}
 
     private void setupHandlers() {
+
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(
+                this, R.array.classify_entries, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        Spinner sp = (Spinner)findViewById(R.id.spinnerClassify);
+        sp.setAdapter(adapter);
+
+
         View.OnClickListener btnCreateClick = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
