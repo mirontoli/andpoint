@@ -17,7 +17,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setupButton();
+        setupCreateButton();
     }
 
     @Override
@@ -42,18 +42,19 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void setupButton() {
+    private void setupCreateButton() {
+
         View.OnClickListener btnClick = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Getting data...", Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this, "Getting data...", Toast.LENGTH_LONG).show();
 
-                TextView txt = (TextView)findViewById(R.id.textViewOutput);
-                txt.setText("Hello\nBool");
+                //TextView txt = (TextView)findViewById(R.id.textViewOutput);
+                //txt.setText("Hello\nBool");
             }
         };
 
-        Button btn = (Button)findViewById(R.id.buttonGetData);
+        Button btn = (Button)findViewById(R.id.buttonCreate);
         btn.setOnClickListener(btnClick);
     }
 
