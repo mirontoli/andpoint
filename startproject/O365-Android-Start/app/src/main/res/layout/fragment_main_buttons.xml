@@ -37,4 +37,40 @@
         android:scaleType="centerInside"
         android:src="@drawable/mail_icon_main" />
 
+    <!-- Capture picture button -->
+    <Button
+        android:id="@+id/btnCapturePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bild"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Record video button -->
+    <Button
+        android:id="@+id/btnRecordVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Video" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Preview"
+        android:padding="10dp"
+        android:textSize="15dp"/>
+
+    <!-- To display picture taken -->
+    <ImageView
+        android:id="@+id/imgPreview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <!-- To preview video recorded -->
+    <VideoView
+        android:id="@+id/videoPreview"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:visibility="gone" />
+
 </LinearLayout>

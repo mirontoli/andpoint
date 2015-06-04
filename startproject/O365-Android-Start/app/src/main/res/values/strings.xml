@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Office 365 Starter</string>
+    <string name="app_name">AndPoint</string>
     <string name="title_Home">Home</string>
     <string name="title_section1">Calendar</string>
     <string name="title_section2">Folders and files</string>
