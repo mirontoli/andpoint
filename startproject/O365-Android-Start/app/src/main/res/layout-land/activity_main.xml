@@ -8,21 +8,4 @@
     android:baselineAligned="false"
     tools:context="com.microsoft.office365.starter.MainActivity.MainActivity" >
 
-	<fragment 
-	    android:name="com.microsoft.office365.starter.MainActivity.MainReadmeFragment"
-	    android:id="@+id/readmeFragment"
-	    android:layout_weight="1"
-	    android:layout_width="@dimen/main_pivot_orientation_size"
-		android:layout_height="wrap_content"
-		android:layout_margin="@dimen/main_readme_margin"
-		tools:layout="@layout/fragment_main_readme" />	
-		
-	<fragment
-	    android:name="com.microsoft.office365.starter.MainActivity.MainButtonsFragment"
-	    android:id="@+id/buttonsFragment"
-	    android:layout_weight="1"
-	    android:layout_width="@dimen/main_pivot_orientation_size"
-	    android:layout_height="wrap_content"
-	    tools:layout="@layout/fragment_main_buttons" />
-	
 </LinearLayout>
