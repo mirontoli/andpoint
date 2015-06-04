@@ -1,7 +1,9 @@
 package se.bool.andpoint.andpoint;
 
+import android.nfc.Tag;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +20,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         setupCreateButton();
+        setupPhotoImageView();
     }
 
     @Override
@@ -51,6 +54,8 @@ public class MainActivity extends ActionBarActivity {
 
                 //TextView txt = (TextView)findViewById(R.id.textViewOutput);
                 //txt.setText("Hello\nBool");
+
+                Log.d("andpoint","Hej!");
             }
         };
 
@@ -58,5 +63,9 @@ public class MainActivity extends ActionBarActivity {
         btn.setOnClickListener(btnClick);
     }
 
+
+    private void setupPhotoImageView() {
+
+    }
 
 }
