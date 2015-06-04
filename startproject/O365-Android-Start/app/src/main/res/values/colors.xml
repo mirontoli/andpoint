@@ -2,8 +2,10 @@
 <resources>
     <color name="ApplicationPageBackgroundThemeBrush">#1799F0</color>
     <color name="DisabledItemBrush">#51B2F3</color>
+
+    <color name="LightGray">#d9d9d9</color>
     
-    <color name="SampleHeaderBrush">#007ACC</color>
+    <color name="SampleHeaderBrush">#6ba824</color>
     <color name="HyperLinkBrush">#FFECE4FF</color>
     <color name="ListBackground">#007ACC</color>
     <color name="PreviewBackground">#1799F0</color>
