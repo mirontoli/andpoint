@@ -55,8 +55,7 @@ import java.util.concurrent.Callable;
 import java.net.URI;
 import java.util.UUID;
 
-public class MainActivity extends Activity implements MainActivityCoordinator,
-        OnServicesDiscoveredListener {
+public class MainActivity extends Activity implements MainActivityCoordinator, OnServicesDiscoveredListener {
 
 	private O365APIsStart_Application mApplication;
 	//private MainButtonsFragment mButtonsFragment;
@@ -204,9 +203,9 @@ public class MainActivity extends Activity implements MainActivityCoordinator,
     private void previewCapturedImage() {
         try {
             // hide video preview
-            videoPreview.setVisibility(View.GONE);
+//            videoPreview.setVisibility(View.GONE);
 
-            imgPreview.setVisibility(View.VISIBLE);
+//            imgPreview.setVisibility(View.VISIBLE);
 
             // bimatp factory
             BitmapFactory.Options options = new BitmapFactory.Options();
@@ -218,7 +217,10 @@ public class MainActivity extends Activity implements MainActivityCoordinator,
             final Bitmap bitmap = BitmapFactory.decodeFile(fileUri.getPath(),
                     options);
 
-            imgPreview.setImageBitmap(bitmap);
+//            imgPreview.setImageBitmap(bitmap);
+            ImageView img = (ImageView)findViewById(R.id.imageViewCamera);
+            img.setImageBitmap(bitmap);
+
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
@@ -301,34 +303,20 @@ public class MainActivity extends Activity implements MainActivityCoordinator,
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        imgPreview = (ImageView) findViewById(R.id.imgPreview);
-        videoPreview = (VideoView) findViewById(R.id.videoPreview);
-        btnCapturePicture = (Button) findViewById(R.id.btnCapturePicture);
-        btnRecordVideo = (Button) findViewById(R.id.btnRecordVideo);
+//        imgPreview = (ImageView) findViewById(R.id.imgPreview);
+//        videoPreview = (VideoView) findViewById(R.id.videoPreview);
+//        btnCapturePicture = (Button) findViewById(R.id.btnCapturePicture);
+//        btnRecordVideo = (Button) findViewById(R.id.btnRecordVideo);
 
         /**
          * Capture image button click event
          */
-        btnCapturePicture.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                // capture picture
-                captureImage();
-            }
-        });
 
         /**
          * Record video button click event
          */
-        btnRecordVideo.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                // record video
-                recordVideo();
-            }
-        });
 
         // Checking camera availability
         if (!isDeviceSupportCamera()) {
@@ -373,7 +361,7 @@ public class MainActivity extends Activity implements MainActivityCoordinator,
         View.OnClickListener imgCameraClickHandler = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("andpoint","Img click!");
+                captureImage();
             }
         };
 
@@ -385,11 +373,6 @@ public class MainActivity extends Activity implements MainActivityCoordinator,
             @Override
             public void onClick(View v) {
                 //Toast.makeText(MainActivity.this, "Getting data...", Toast.LENGTH_LONG).show();
-
-                //TextView txt = (TextView)findViewById(R.id.textViewOutput);
-                //txt.setText("Hello\nBool");
-
-                Log.d("andpoint","Create button!");
             }
         };
 
