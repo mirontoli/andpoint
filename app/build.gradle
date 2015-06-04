@@ -22,4 +22,15 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:22.2.0'
+    // base OData library:
+    compile group: 'com.microsoft.services', name: 'odata-engine-core', version: '0.13.0'
+    compile group: 'com.microsoft.services', name: 'odata-engine-android-impl', version: '0.13.0', ext:'aar'
+
+    // choose the outlook, discovery, and file services
+    //compile group: 'com.microsoft.services', name: 'outlook-services', version: '0.13.0'
+    compile group: 'com.microsoft.services', name: 'discovery-services', version: '0.13.0'
+    compile group: 'com.microsoft.services', name: 'file-services', version: '0.13.0'
+
+    // Azure Active Directory Library
+    compile group: 'com.microsoft.aad', name: 'adal', version: '1.1.2'
 }
