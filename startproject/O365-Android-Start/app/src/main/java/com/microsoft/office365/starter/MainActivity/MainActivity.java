@@ -349,17 +349,27 @@ public class MainActivity extends Activity implements MainActivityCoordinator,
 		mButtonsFragment.setButtonsEnabled(mApplication.userIsAuthenticated());
 		*/
 
+        setupApp();
         setupHandlers();
 	}
 
-    private void setupHandlers() {
+    private void setupApp() {
 
+        // date
+
+
+        // spinner
         ArrayAdapter adapter = ArrayAdapter.createFromResource(
                 this, R.array.classify_entries, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         Spinner sp = (Spinner)findViewById(R.id.spinnerClassify);
         sp.setAdapter(adapter);
+
+
+    }
+
+    private void setupHandlers() {
 
 
         View.OnClickListener btnCreateClick = new View.OnClickListener() {

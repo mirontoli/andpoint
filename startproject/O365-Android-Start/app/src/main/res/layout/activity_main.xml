@@ -34,16 +34,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editTextAddress"
                 android:layout_gravity="center_horizontal"
-                android:hint="Adress" />
+                android:hint="Adress" /><![CDATA[
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="date"
-                android:ems="10"
-                android:id="@+id/editTextDate"
-                android:layout_gravity="center_horizontal"
-                android:hint="Datum" /><![CDATA[
+
 
             Spinner
                 android:layout_width="match_parent"
@@ -55,7 +48,16 @@
 
 
 
+
+
             ]]>
+
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/datePicker"
+                android:layout_gravity="center_horizontal"
+                android:calendarViewShown="false" />
 
             <Spinner
                 android:layout_width="match_parent"
